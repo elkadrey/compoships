@@ -57,7 +57,7 @@ trait HasOneOrMany
             $whereIn = $this->whereInMethod($this->parent, $this->localKey);
             $modelKeys = $this->getKeys($models, $this->localKey);
 
-            ((method_exists($this, 'getRelationQuery') ? $this->getRelationQuery() : null) ?? $this->query)->{$whereIn}($this->foreignKey, $modelKeys);
+            ((method_exists($this, 'getRelationQuery') ? $this->getRelationQuery() : null) ?? $this->query)->{$whereIn}($this->foreignKey, $modelKeys, 'or');
 
             if ($modelKeys === []) {
                 $this->eagerKeysWereEmpty = true;
@@ -219,17 +219,30 @@ trait HasOneOrMany
     protected function matchOneOrMany(array $models, Collection $results, $relation, $type)
     {
         $dictionary = $this->buildDictionary($results);
-
+        
         // Once we have the dictionary we can simply spin through the parent models to
         // link them up with their children using the keyed dictionary to make the
         // matching very convenient and easy work. Then we'll just return them.
         foreach ($models as $model) {
-            $key = $model->getAttribute($this->localKey);
+            // $key = $model->getAttribute($this->localKey);
+            $dictKey = $model->getAttribute($this->localKey);
             //If the foreign key is an array, we know it's a multi-column relationship
             //And we join the values to construct the dictionary key
-            $dictKey = is_array($key) ? implode('-', $key) : $key;
-
-            if (isset($dictionary[$dictKey])) {
+            // $dictKey = is_array($key) ? implode('-', $key) : $key;
+            
+            if(is_array($dictKey))
+            {
+                foreach($dictKey as $key)
+                {
+                    if (isset($dictionary[$key])) {
+                        
+                        $filtered[] = $this->related->newCollection(!is_array($dictionary[$key]) ? $dictionary[$key]->toArray() : $dictionary[$key]);
+                        if($type === "one") break;
+                    }
+                }
+                $model->setRelation($relation, $type === "one" ? $filtered[0] : new \Illuminate\Database\Eloquent\Collection($filtered));
+            }
+            else if (isset($dictionary[$dictKey])) {
                 $model->setRelation($relation, $this->getRelationValue($dictionary, $dictKey, $type));
             }
         }
@@ -256,16 +269,22 @@ trait HasOneOrMany
         foreach ($results as $result) {
             //If the foreign key is an array, we know it's a multi-column relationship...
             if (is_array($foreign)) {
-                $dictKeyValues = array_map(function ($k) use ($result) {
-                    return $result->{$k};
-                }, $foreign);
-                //... so we join the values to construct the dictionary key
-                $dictionary[implode('-', $dictKeyValues)][] = $result;
+                // $dictKeyValues = array_map(function ($k) use ($result) {                
+                //     return $result->{$k};
+                // }, $foreign);
+                // //... so we join the values to construct the dictionary key
+                // // $dictionary[implode('-', $dictKeyValues)][] = $result;
+                // $dictionary[implode('-', $dictKeyValues)][] = $result;
+                foreach($foreign as $k)
+                {
+                    if(count($cols = explode("|", $k)) > 1) $k = $cols[0];
+                    if(!empty($result->{$k})) $dictionary[$result->{$k}] = $result;
+                }
+
             } else {
                 $dictionary[$result->{$foreign}][] = $result;
             }
         }
-
         return $dictionary;
     }
 

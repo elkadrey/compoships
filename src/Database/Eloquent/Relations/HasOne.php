@@ -42,7 +42,7 @@ class HasOne extends BaseHasOne
         if (!$this->withDefault) {
             return;
         }
-
+        
         $instance = $this->related->newInstance();
 
         $foreignKey = $this->getForeignKeyName();
