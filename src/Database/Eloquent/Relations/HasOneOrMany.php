@@ -26,10 +26,17 @@ trait HasOneOrMany
 
                 foreach ($this->foreignKey as $index => $key) {
                     $tmp = explode('.', $key);
-                    $key = end($tmp);
+                    $keys = explode("|", end($tmp));
+                    $where = "where";
+                    if(count($keys) > 1)
+                    {
+                        $where = $keys[1] === "or" ? "orWhere" : "where";
+                    }
+                    $key = $keys[0];
+
                     $fullKey = $this->getRelated()
                             ->getTable().'.'.$key;
-                    $this->query->where($fullKey, '=', $parentKeyValue[$index]);
+                    $this->query->{$where}($fullKey, '=', $parentKeyValue[$index]);
 
                     if ($allParentKeyValuesAreNull) {
                         $this->query->whereNotNull($fullKey);
@@ -88,7 +95,7 @@ trait HasOneOrMany
             return $model->getKeyName() === last(explode('.', $key))
                 && in_array($model->getKeyType(), ['int', 'integer']);
         });
-
+        
         return $where->count() === count($key) ? 'whereIntegerInRaw' : 'whereIn';
     }
 
@@ -232,14 +239,16 @@ trait HasOneOrMany
             
             if(is_array($dictKey))
             {
+                $filtered = [];
                 foreach($dictKey as $key)
                 {
                     if (isset($dictionary[$key])) {
-                        
-                        $filtered[] = $this->related->newCollection(!is_array($dictionary[$key]) ? $dictionary[$key]->toArray() : $dictionary[$key]);
+                        $row = $dictionary[$key];
+                        $filtered[$row->id] = $this->related->newCollection($row->toArray());
                         if($type === "one") break;
                     }
                 }
+                $filtered = array_values($filtered);
                 $model->setRelation($relation, $type === "one" ? $filtered[0] : new \Illuminate\Database\Eloquent\Collection($filtered));
             }
             else if (isset($dictionary[$dictKey])) {
@@ -277,7 +286,7 @@ trait HasOneOrMany
                 // $dictionary[implode('-', $dictKeyValues)][] = $result;
                 foreach($foreign as $k)
                 {
-                    if(count($cols = explode("|", $k)) > 1) $k = $cols[0];
+                    $k = $this->getColName($k);;
                     if(!empty($result->{$k})) $dictionary[$result->{$k}] = $result;
                 }
 
@@ -324,5 +333,10 @@ trait HasOneOrMany
         } else {
             parent::addOneOfManyJoinSubQueryConstraints($join);
         }
+    }
+
+    public function getColName(string $key)
+    {
+        return count($cols = explode("|", $key)) > 1 ? $cols[0] : $key;
     }
 }
