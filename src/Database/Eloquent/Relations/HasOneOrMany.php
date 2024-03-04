@@ -248,8 +248,11 @@ trait HasOneOrMany
                         if($type === "one") break;
                     }
                 }
-                $filtered = array_values($filtered);
-                $model->setRelation($relation, $type === "one" ? $filtered[0] : new \Illuminate\Database\Eloquent\Collection($filtered));
+                if(count($filtered) > 0)
+                {
+                    $filtered = array_values($filtered);
+                    $model->setRelation($relation, $type === "one" ? $filtered[0] : new \Illuminate\Database\Eloquent\Collection($filtered));
+                }
             }
             else if (isset($dictionary[$dictKey])) {
                 $model->setRelation($relation, $this->getRelationValue($dictionary, $dictKey, $type));
