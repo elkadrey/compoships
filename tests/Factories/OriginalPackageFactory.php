@@ -1,10 +1,10 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Factories;
+namespace Elkadrey\Compoships\Tests\Factories;
 
-use Awobaz\Compoships\Database\Eloquent\Factories\ComposhipsFactory;
-use Awobaz\Compoships\Tests\Models\Allocation;
-use Awobaz\Compoships\Tests\Models\OriginalPackage;
+use Elkadrey\Compoships\Database\Eloquent\Factories\ComposhipsFactory;
+use Elkadrey\Compoships\Tests\Models\Allocation;
+use Elkadrey\Compoships\Tests\Models\OriginalPackage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OriginalPackageFactory extends Factory

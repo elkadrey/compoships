@@ -1,8 +1,8 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\TestCase;
+namespace Elkadrey\Compoships\Tests\TestCase;
 
-use Awobaz\Compoships\Tests\Migration;
+use Elkadrey\Compoships\Tests\Migration;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;

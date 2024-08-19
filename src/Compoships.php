@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships;
+namespace Elkadrey\Compoships;
 
-use Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships;
-use Awobaz\Compoships\Database\Query\Builder as QueryBuilder;
+use Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships;
+use Elkadrey\Compoships\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Str;
 
 trait Compoships
@@ -39,7 +39,7 @@ trait Compoships
     /**
      * Configure Eloquent to use Compoships Query Builder.
      *
-     * @return \Awobaz\Compoships\Database\Query\Builder|static
+     * @return \Elkadrey\Compoships\Database\Query\Builder|static
      */
     protected function newBaseQueryBuilder()
     {

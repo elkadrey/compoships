@@ -1,18 +1,18 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Unit;
+namespace Elkadrey\Compoships\Tests\Unit;
 
-use Awobaz\Compoships\Tests\Models\Allocation;
-use Awobaz\Compoships\Tests\Models\OriginalPackage;
-use Awobaz\Compoships\Tests\Models\ProductCode;
-use Awobaz\Compoships\Tests\TestCase\TestCase;
+use Elkadrey\Compoships\Tests\Models\Allocation;
+use Elkadrey\Compoships\Tests\Models\OriginalPackage;
+use Elkadrey\Compoships\Tests\Models\ProductCode;
+use Elkadrey\Compoships\Tests\TestCase\TestCase;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Eloquent\Model;
 
 class BelongsToTest extends TestCase
 {
     /**
-     * @covers \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     public function test_uuid_no_inrecemnt_relation()
     {

@@ -23,12 +23,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Awobaz\\Compoships\\": "src"
+      "Elkadrey\\Compoships\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Awobaz\\Compoships\\Tests\\": "tests"
+      "Elkadrey\\Compoships\\Tests\\": "tests"
     }
   },
   "minimum-stability": "dev",

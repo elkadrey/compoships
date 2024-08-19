@@ -1,26 +1,26 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Unit;
+namespace Elkadrey\Compoships\Tests\Unit;
 
-use Awobaz\Compoships\Tests\Models\Allocation;
-use Awobaz\Compoships\Tests\TestCase\TestCase;
+use Elkadrey\Compoships\Tests\Models\Allocation;
+use Elkadrey\Compoships\Tests\TestCase\TestCase;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 /**
- * @covers \Awobaz\Compoships\Compoships::getAttribute
- * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasMany::getResults
- * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasOneOrMany::getForeignKeyName
+ * @covers \Elkadrey\Compoships\Compoships::getAttribute
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany::getResults
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasOneOrMany::getForeignKeyName
  */
 class BuilderTest extends TestCase
 {
     /**
-     * @covers \Awobaz\Compoships\Compoships::newBaseQueryBuilder
-     * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::hasMany
-     * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::newHasMany
-     * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::sanitizeKey
-     * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasOneOrMany::addConstraints
-     * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasOneOrMany::getQualifiedParentKeyName
-     * @covers \Awobaz\Compoships\Database\Query\Builder::whereColumn
+     * @covers \Elkadrey\Compoships\Compoships::newBaseQueryBuilder
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::hasMany
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::newHasMany
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::sanitizeKey
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasOneOrMany::addConstraints
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasOneOrMany::getQualifiedParentKeyName
+     * @covers \Elkadrey\Compoships\Database\Query\Builder::whereColumn
      */
     public function test_Illuminate_hasOneOrMany__Builder_whereColumn_on_relation_column()
     {

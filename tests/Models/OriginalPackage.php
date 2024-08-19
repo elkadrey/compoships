@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Models;
+namespace Elkadrey\Compoships\Tests\Models;
 
-use Awobaz\Compoships\Compoships;
-use Awobaz\Compoships\Tests\Factories\OriginalPackageFactory;
+use Elkadrey\Compoships\Compoships;
+use Elkadrey\Compoships\Tests\Factories\OriginalPackageFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,7 +26,7 @@ class OriginalPackage extends Model
     public $timestamps = false;
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     public function allocation()
     {
@@ -34,7 +34,7 @@ class OriginalPackage extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     public function productCode()
     {
@@ -42,7 +42,7 @@ class OriginalPackage extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     public function productCode2()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Factories;
+namespace Elkadrey\Compoships\Tests\Factories;
 
 trait DumbHasFactory
 {

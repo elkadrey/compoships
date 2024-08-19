@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Relations;
+namespace Elkadrey\Compoships\Database\Eloquent\Relations;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -82,7 +82,7 @@ trait HasOneOrMany
      *
      * @return string
      *
-     * 5.6 - no method \Awobaz\Compoships\Database\Eloquent\Relations\HasOneOrMany::whereInMethod
+     * 5.6 - no method \Elkadrey\Compoships\Database\Eloquent\Relations\HasOneOrMany::whereInMethod
      * added in this commit (5.7.17) https://github.com/illuminate/database/commit/9af300d1c50c9ec526823c1e6548daa3949bf9a9
      */
     protected function whereInMethod(Model $model, $key)

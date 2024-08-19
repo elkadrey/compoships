@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Relations;
+namespace Elkadrey\Compoships\Database\Eloquent\Relations;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany as BaseHasMany;

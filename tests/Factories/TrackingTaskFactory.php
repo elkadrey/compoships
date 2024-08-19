@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Factories;
+namespace Elkadrey\Compoships\Tests\Factories;
 
-use Awobaz\Compoships\Database\Eloquent\Factories\ComposhipsFactory;
-use Awobaz\Compoships\Tests\Models\TrackingTask;
+use Elkadrey\Compoships\Database\Eloquent\Factories\ComposhipsFactory;
+use Elkadrey\Compoships\Tests\Models\TrackingTask;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TrackingTaskFactory extends Factory

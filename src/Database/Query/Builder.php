@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Query;
+namespace Elkadrey\Compoships\Database\Query;
 
 use Illuminate\Database\Query\Builder as BaseQueryBuilder;
 

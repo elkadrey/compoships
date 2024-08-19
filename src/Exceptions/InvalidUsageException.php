@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Exceptions;
+namespace Elkadrey\Compoships\Exceptions;
 
 use Exception;
 

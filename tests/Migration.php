@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Tests;
+namespace Elkadrey\Compoships\Tests;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Migrations\Migration as BaseMigration;

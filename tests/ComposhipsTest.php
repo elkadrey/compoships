@@ -1,22 +1,22 @@
 <?php
 
-namespace Awobaz\Compoships\Tests;
+namespace Elkadrey\Compoships\Tests;
 
-use Awobaz\Compoships\Tests\Models\Allocation;
-use Awobaz\Compoships\Tests\Models\OriginalPackage;
-use Awobaz\Compoships\Tests\Models\PickupPoint;
-use Awobaz\Compoships\Tests\Models\PickupTime;
-use Awobaz\Compoships\Tests\Models\Space;
-use Awobaz\Compoships\Tests\Models\TrackingTask;
-use Awobaz\Compoships\Tests\Models\User;
-use Awobaz\Compoships\Tests\TestCase\TestCase;
+use Elkadrey\Compoships\Tests\Models\Allocation;
+use Elkadrey\Compoships\Tests\Models\OriginalPackage;
+use Elkadrey\Compoships\Tests\Models\PickupPoint;
+use Elkadrey\Compoships\Tests\Models\PickupTime;
+use Elkadrey\Compoships\Tests\Models\Space;
+use Elkadrey\Compoships\Tests\Models\TrackingTask;
+use Elkadrey\Compoships\Tests\Models\User;
+use Elkadrey\Compoships\Tests\TestCase\TestCase;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @covers \Awobaz\Compoships\Compoships
- * @covers \Awobaz\Compoships\Database\Query\Builder
- * @covers \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
- * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+ * @covers \Elkadrey\Compoships\Compoships
+ * @covers \Elkadrey\Compoships\Database\Query\Builder
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany
  */
 class ComposhipsTest extends TestCase
 {
@@ -40,7 +40,7 @@ class ComposhipsTest extends TestCase
     }
 
     /**
-     * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function testSaveModelNotUsingCompoships_onHasOne()
     {

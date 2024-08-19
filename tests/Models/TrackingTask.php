@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Models;
+namespace Elkadrey\Compoships\Tests\Models;
 
-use Awobaz\Compoships\Compoships;
-use Awobaz\Compoships\Tests\Factories\TrackingTaskFactory;
+use Elkadrey\Compoships\Compoships;
+use Elkadrey\Compoships\Tests\Factories\TrackingTaskFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

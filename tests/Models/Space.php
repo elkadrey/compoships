@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Models;
+namespace Elkadrey\Compoships\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;

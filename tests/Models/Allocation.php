@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Models;
+namespace Elkadrey\Compoships\Tests\Models;
 
-use Awobaz\Compoships\Compoships;
-use Awobaz\Compoships\Tests\Factories\AllocationFactory;
+use Elkadrey\Compoships\Compoships;
+use Elkadrey\Compoships\Tests\Factories\AllocationFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
@@ -35,7 +35,7 @@ class Allocation extends Model
     ];
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany
      */
     public function trackingTasks()
     {
@@ -43,7 +43,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany
      */
     public function originalPackages()
     {
@@ -51,7 +51,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function originalPackagesOneOfMany()
     {
@@ -59,7 +59,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function space()
     {
@@ -67,7 +67,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
@@ -75,7 +75,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function smallerTrackingTask()
     {
@@ -85,7 +85,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function latestTrackingTask()
     {
@@ -95,7 +95,7 @@ class Allocation extends Model
     }
 
     /**
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function oldestTrackingTask()
     {

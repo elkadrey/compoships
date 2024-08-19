@@ -1,12 +1,12 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Concerns;
+namespace Elkadrey\Compoships\Database\Eloquent\Concerns;
 
-use Awobaz\Compoships\Compoships;
-use Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo;
-use Awobaz\Compoships\Database\Eloquent\Relations\HasMany;
-use Awobaz\Compoships\Database\Eloquent\Relations\HasOne;
-use Awobaz\Compoships\Exceptions\InvalidUsageException;
+use Elkadrey\Compoships\Compoships;
+use Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo;
+use Elkadrey\Compoships\Database\Eloquent\Relations\HasMany;
+use Elkadrey\Compoships\Database\Eloquent\Relations\HasOne;
+use Elkadrey\Compoships\Exceptions\InvalidUsageException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Expression;
@@ -44,7 +44,7 @@ trait HasRelationships
      * @param string|array|null $foreignKey
      * @param string|array|null $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     public function hasOne($related, $foreignKey = null, $localKey = null)
     {
@@ -79,7 +79,7 @@ trait HasRelationships
      * @param string|array                          $foreignKey
      * @param string|array                          $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasOne
      */
     protected function newHasOne(Builder $query, Model $parent, $foreignKey, $localKey)
     {
@@ -108,7 +108,7 @@ trait HasRelationships
      * @param string|array|null $foreignKey
      * @param string|array|null $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)
     {
@@ -143,7 +143,7 @@ trait HasRelationships
      * @param string|array                          $foreignKey
      * @param string|array                          $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany
      */
     protected function newHasMany(Builder $query, Model $parent, $foreignKey, $localKey)
     {
@@ -158,7 +158,7 @@ trait HasRelationships
      * @param string|array|null $ownerKey
      * @param string            $relation
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     public function belongsTo($related, $foreignKey = null, $ownerKey = null, $relation = null)
     {
@@ -199,7 +199,7 @@ trait HasRelationships
      * @param string|array                          $ownerKey
      * @param string                                $relation
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo
      */
     protected function newBelongsTo(Builder $query, Model $child, $foreignKey, $ownerKey, $relation)
     {

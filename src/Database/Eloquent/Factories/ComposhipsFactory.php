@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Factories;
+namespace Elkadrey\Compoships\Database\Eloquent\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory as EloquentFactory;
 

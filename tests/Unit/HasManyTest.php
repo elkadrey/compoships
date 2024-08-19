@@ -1,27 +1,27 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Unit;
+namespace Elkadrey\Compoships\Tests\Unit;
 
-use Awobaz\Compoships\Database\Eloquent\Relations\HasMany;
-use Awobaz\Compoships\Tests\Models\Allocation;
-use Awobaz\Compoships\Tests\Models\OriginalPackage;
-use Awobaz\Compoships\Tests\Models\TrackingTask;
-use Awobaz\Compoships\Tests\TestCase\TestCase;
+use Elkadrey\Compoships\Database\Eloquent\Relations\HasMany;
+use Elkadrey\Compoships\Tests\Models\Allocation;
+use Elkadrey\Compoships\Tests\Models\OriginalPackage;
+use Elkadrey\Compoships\Tests\Models\TrackingTask;
+use Elkadrey\Compoships\Tests\TestCase\TestCase;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Support\Carbon;
 
 /**
- * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasOneOrMany
- * @covers \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
- * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::hasMany
- * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::newHasMany
- * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::validateRelatedModel
- * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::sanitizeKey
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasOneOrMany
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\HasMany
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::hasMany
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::newHasMany
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::validateRelatedModel
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::sanitizeKey
  * Generic:
- * @covers \Awobaz\Compoships\Compoships::getAttribute
- * @covers \Awobaz\Compoships\Compoships::newBaseQueryBuilder
- * @covers \Awobaz\Compoships\Compoships::qualifyColumn
- * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::getQualifiedKeyName
+ * @covers \Elkadrey\Compoships\Compoships::getAttribute
+ * @covers \Elkadrey\Compoships\Compoships::newBaseQueryBuilder
+ * @covers \Elkadrey\Compoships\Compoships::qualifyColumn
+ * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::getQualifiedKeyName
  */
 class HasManyTest extends TestCase
 {
@@ -54,10 +54,10 @@ class HasManyTest extends TestCase
     }
 
     /**
-     * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::belongsTo
-     * @covers \Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships::newBelongsTo
-     * @covers \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo::addConstraints
-     * @covers \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo::getResults
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::belongsTo
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Concerns\HasRelationships::newBelongsTo
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo::addConstraints
+     * @covers \Elkadrey\Compoships\Database\Eloquent\Relations\BelongsTo::getResults
      */
     public function test_Compoships_hasOneOrMany_saveMany()
     {
@@ -202,7 +202,7 @@ class HasManyTest extends TestCase
     }
 
     /**
-     * @covers \Awobaz\Compoships\Database\Query\Builder::whereIn
+     * @covers \Elkadrey\Compoships\Database\Query\Builder::whereIn
      */
     public function test_Compoships_eagerLoading()
     {
@@ -256,7 +256,7 @@ class HasManyTest extends TestCase
     }
 
     /**
-     * @covers \Awobaz\Compoships\Database\Query\Builder::whereIn
+     * @covers \Elkadrey\Compoships\Database\Query\Builder::whereIn
      */
     public function test_Illuminate_eagerLoading()
     {

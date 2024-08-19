@@ -10,7 +10,7 @@ if (PHP_MAJOR_VERSION === 7 && in_array(PHP_MINOR_VERSION, [0, 1])) {
 }
 
 $autoloader->addClassMap([
-    \Awobaz\Compoships\Tests\TestCase\TestCase::class => $mappedTestCaseFilename,
+    \Elkadrey\Compoships\Tests\TestCase\TestCase::class => $mappedTestCaseFilename,
 ]);
 
 // NOTE: we enforce UTC timezone because since Laravel 7 it has changed behavior for datetime casting (it includes timezone)
@@ -32,5 +32,5 @@ if (!function_exists('getPHPVersion')) {
 }
 
 if (getLaravelVersion() < 8.0) {
-    class_alias(\Awobaz\Compoships\Tests\Factories\DumbHasFactory::class, '\Illuminate\Database\Eloquent\Factories\HasFactory');
+    class_alias(\Elkadrey\Compoships\Tests\Factories\DumbHasFactory::class, '\Illuminate\Database\Eloquent\Factories\HasFactory');
 }

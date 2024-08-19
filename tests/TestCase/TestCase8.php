@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\TestCase;
+namespace Elkadrey\Compoships\Tests\TestCase;
 
 /**
  * Supports latest versions.

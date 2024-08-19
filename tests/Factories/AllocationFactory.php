@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships\Tests\Factories;
+namespace Elkadrey\Compoships\Tests\Factories;
 
-use Awobaz\Compoships\Database\Eloquent\Factories\ComposhipsFactory;
-use Awobaz\Compoships\Tests\Models\Allocation;
+use Elkadrey\Compoships\Database\Eloquent\Factories\ComposhipsFactory;
+use Elkadrey\Compoships\Tests\Models\Allocation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AllocationFactory extends Factory

@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Relations;
+namespace Elkadrey\Compoships\Database\Eloquent\Relations;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -114,7 +114,7 @@ class BelongsTo extends BaseBelongsTo
                 $keys[] = $this->related->getTable().'.'.$key;
             }
 
-            // method \Awobaz\Compoships\Database\Eloquent\Relations\HasOneOrMany::whereInMethod
+            // method \Elkadrey\Compoships\Database\Eloquent\Relations\HasOneOrMany::whereInMethod
             // 5.6 - does not exist
             // 5.7 - added in 5.7.17 / https://github.com/illuminate/database/commit/9af300d1c50c9ec526823c1e6548daa3949bf9a9
             $this->query->whereIn($keys, $this->getEagerModelKeys($models));
